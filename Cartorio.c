@@ -1,19 +1,19 @@
-#include <stdio.h> //biblioteca de comunicaï¿½ï¿½o com o usuï¿½rio
-#include <stdlib.h> //biblioteca de alocaï¿½ï¿½o de espaï¿½o na memï¿½ria
-#include <locale.h> //boblioteca de alocaï¿½ï¿½o de texto por regiï¿½o
-#include <string.h> //biblioteca responsï¿½vel por cuidar das strings
+#include <stdio.h> //biblioteca de comunicação com o usuário
+#include <stdlib.h> //biblioteca de alocação de espaço na memória
+#include <locale.h> //boblioteca de alocação de texto por região
+#include <string.h> //biblioteca responsável por cuidar das strings
 
-int registro() // funï¿½ï¿½o responsï¿½vel por cadastrar os usuï¿½rios no sistema
+int registro() // função responsável por cadastrar os usuários no sistema
 {
-	//inicio de criaï¿½ï¿½o das variï¿½veis/strings
+	//inicio de criação das variáveis/strings
 	char arquivo[40];
 	char cpf[40];
 	char nome[40];
 	char sobrenome[40];
 	char cargo[40];
-	//final da criaï¿½ï¿½o das variï¿½veis
+	//final da criação das variáveis
 	
-	printf("Digite o CPF a ser cadastrado:"); //coletando informaï¿½ï¿½es do usuï¿½rio
+	printf("Digite o CPF a ser cadastrado:"); //coletando informações do usuário
 	scanf("%s", cpf); //%s refere se a strings
 	
 	strcpy(arquivo, cpf); //responsï¿½vel por copiar os valores da string
@@ -68,16 +68,16 @@ int registro() // funï¿½ï¿½o responsï¿½vel por cadastrar os usuï¿½rios no sistem
 
 
 
-int consultar() //funï¿½ï¿½o responsï¿½vel por consultar usuï¿½rios
+int consultar() //função responsável por consultar usuários
 {
 	setlocale(LC_ALL, "portuguese"); //Definindo a linguagem
 	
-	//inicio a criaï¿½ï¿½o de variï¿½veis
+	//inicio a criação de variáveis
 	char cpf[40];
 	char conteudo[200];
-	//final da criaï¿½ï¿½o de variï¿½veis
+	//final da criação de variáveis
 	
-	printf("Digite o CPF que deseja consultar:"); //coleta o dado necessï¿½rio para consulta
+	printf("Digite o CPF que deseja consultar:"); //coleta o dado necessário para consulta
 	scanf("%s",cpf);
 	
 	FILE *file;
@@ -85,12 +85,12 @@ int consultar() //funï¿½ï¿½o responsï¿½vel por consultar usuï¿½rios
 
 	if(file == NULL)
 	{
-		printf("lamento, este CPF nï¿½o foi localizado:\n");
+		printf("lamento, este CPF não foi localizado:\n");
 	}
 
-	while(fgets(conteudo, 200, file) != NULL) //enquanto o fgets estiver escrevendo na variavel/sring o conteudo atï¿½ 200 dos valores dentro do arquivo
+	while(fgets(conteudo, 200, file) != NULL) //enquanto o fgets estiver escrevendo na variavel/sring o conteudo até 200 dos valores dentro do arquivo
 	{
-		printf("\nEssas sï¿½o as informaï¿½ï¿½es do usuï¿½rio:/n");
+		printf("\nEssas são as informações do usuário:/n");
 		printf("%s", conteudo);
 		printf("\n\n");
 	}
@@ -104,11 +104,11 @@ int deletar()
 {
 	setlocale(LC_ALL,"portuguese"); //definindo a linguagem
 	
-	//inicio das variï¿½veis
+	//inicio das variáveis
 	char cpf[40];
-	//fim das variï¿½veis
+	//fim das variáveis
 	
-	printf("Digite o CPF do usuï¿½rio a ser deletado: "); //coleta o dado necessï¿½rio para deletar
+	printf("Digite o CPF do usuï¿½rio a ser deletado: "); //coleta o dado necessário para deletar
 	scanf("%s", cpf);	
 	
 	FILE*file;
@@ -123,8 +123,8 @@ int deletar()
 	
 	else
 	{
-	fclose(file); // Fecha o arquivo, pois ele ï¿½ existente
-    remove(cpf); // Agora vocï¿½ pode remover o arquivo
+	fclose(file); // Fecha o arquivo, pois ele já existente
+    remove(cpf); // Agora você pode remover o arquivo
     printf("Usuï¿½rio deletado com sucesso!\n");
     system("pause");	
 	}
@@ -135,7 +135,7 @@ int deletar()
 
 int main()
 {
-	int opcao=0; //definindo variï¿½veis
+	int opcao=0; //definindo variáveis
 	int laco=1;
 	
 	for(laco=1; laco=1;)
@@ -154,14 +154,14 @@ int main()
 		printf("\t4 - Sair do sistema.\n");
 		printf("opção:"); //fim do menu
 	
-		scanf("%d", &opcao); //armazenando a escolha do usuï¿½rio
+		scanf("%d", &opcao); //armazenando a escolha do usuário
 
 		system("cls");
 		
-		switch(opcao) //inicio da seleï¿½ï¿½o do menu
+		switch(opcao) //inicio da seleção do menu
 		{
 			case 1: 
-			registro(); //chamada de funï¿½ï¿½es
+			registro(); //chamada de funções
 			break;
 			
 			case 2:
@@ -180,12 +180,10 @@ int main()
 			
 			default: 
 			printf("Lamento, essa opção não está disponível :( , por favor retorne ao menu\n");
-			system("pause"); //fim da seleï¿½ï¿½o
+			system("pause"); //fim da seleção
 			
 		}
 		
-	
-	
 	
 	}
 }
