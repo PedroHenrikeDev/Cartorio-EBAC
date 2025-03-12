@@ -117,7 +117,7 @@ int deletar()
 	
 	if(file == NULL)
 	{
-		printf("lamento, o usuï¿½rio nï¿½o foi encontrado no sistema.\n");
+		printf("lamento, o usuário não foi encontrado no sistema.\n");
 		system("pause");
 	}
 	
@@ -125,7 +125,7 @@ int deletar()
 	{
 	fclose(file); // Fecha o arquivo, pois ele já existente
     remove(cpf); // Agora você pode remover o arquivo
-    printf("Usuï¿½rio deletado com sucesso!\n");
+    printf("Usuário deletado com sucesso!\n");
     system("pause");	
 	}
 	
@@ -139,9 +139,17 @@ int main()
 	int laco=1;
 	char senhadigitada[10]="a";
 	int comparacao; //responsável pela comparação na hora de colocar a senha
+	int tentativas = 0; //contador de tentativas
+	
 	
 	printf("### Cartório de alunos da EBAC ###\n\n");
 	printf("Login de administrador!\n\nDigite a sua senha:");
+	
+	//loop para permitir as 3 tentativas
+	while (tentativas <3)
+	{
+	
+	printf("digite a senha:\n");
 	scanf("%s",senhadigitada);
 	
 	comparacao = strcmp(senhadigitada, "admin");
@@ -186,7 +194,7 @@ int main()
 			
 			case 4:
 			printf("obrigado por utilizar o sistema! :)\n");
-			return 0;
+			return 0; //comando para sair do sistema
 			break;
 			
 			
@@ -200,6 +208,17 @@ int main()
 	}
 	
 	else
-	printf("senha incorreta");
+	{
+	tentativas++;
+	printf("senha incorreta! Tentativas restantes: %d\n", 3 - tentativas);
+	
+	}
+	
+}
 
+	//se o usuário errar a senha 3 vezes, exibe a mensagem de bloqueio
+	printf("limite de tentativas excecido Acesso negado :(\n");
+	
+	return 0;
+	
 }
