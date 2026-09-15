@@ -1,22 +1,22 @@
-#include <stdio.h> //biblioteca de comunicaÁ„o com o usu·rio
-#include <stdlib.h> //biblioteca de alocaÁ„o de espaÁo na memÛria
-#include <locale.h> //boblioteca de alocaÁ„o de texto por regi„o
-#include <string.h> //biblioteca respons·vel por cuidar das strings
+#include <stdio.h> //biblioteca de comunica√ß√£o com o usu√°rio
+#include <stdlib.h> //biblioteca de aloca√ß√£o de espa√ßo na mem√≥ria
+#include <locale.h> //biblioteca de aloca√ß√£o de texto por regi√£o
+#include <string.h> //biblioteca respons√°vel por cuidar das strings
 
-int registro() // funÁ„o respons·vel por cadastrar os usu·rios no sistema
+int registro() // fun√ß√£o respons√°vel por cadastrar os usu√°rios no sistema
 {
-	//inicio de criaÁ„o das vari·veis/strings
+	//inicio de cria√ß√£o das vari√°veis/strings
 	char arquivo[40];
 	char cpf[40];
 	char nome[40];
 	char sobrenome[40];
 	char cargo[40];
-	//final da criaÁ„o das vari·veis
+	//final da cria√ß√£o das vari√°veis
 	
-	printf("Digite o CPF a ser cadastrado:"); //coletando informaÁıes do usu·rio
+	printf("Digite o CPF a ser cadastrado:"); //coletando informa√ß√µes do usu√°rio
 	scanf("%s", cpf); //%s refere se a strings
 	
-	strcpy(arquivo, cpf); //responsÔøΩvel por copiar os valores da string
+	strcpy(arquivo, cpf); //respons√Ø¬ø¬Ωvel por copiar os valores da string
 	
 	FILE *file; //cria o arquivo
 	file = fopen(arquivo, "w"); //cria o arquivo e o "w" significa escrever
@@ -68,16 +68,16 @@ int registro() // funÁ„o respons·vel por cadastrar os usu·rios no sistema
 
 
 
-int consultar() //funÁ„o respons·vel por consultar usu·rios
+int consultar() //fun√ß√£o respons√°vel por consultar usu√°rios
 {
 	setlocale(LC_ALL, "portuguese"); //Definindo a linguagem
 	
-	//inicio a criaÁ„o de vari·veis
+	//inicio a cria√ß√£o de vari√°veis
 	char cpf[40];
 	char conteudo[200];
-	//final da criaÁ„o de vari·veis
+	//final da cria√ß√£o de vari√°veis
 	
-	printf("Digite o CPF que deseja consultar:"); //coleta o dado necess·rio para consulta
+	printf("Digite o CPF que deseja consultar:"); //coleta o dado necess√°rio para consulta
 	scanf("%s",cpf);
 	
 	FILE *file;
@@ -85,12 +85,12 @@ int consultar() //funÁ„o respons·vel por consultar usu·rios
 
 	if(file == NULL)
 	{
-		printf("lamento, este CPF n„o foi localizado:\n");
+		printf("lamento, este CPF n√£o foi localizado:\n");
 	}
 
-	while(fgets(conteudo, 200, file) != NULL) //enquanto o fgets estiver escrevendo na variavel/sring o conteudo atÈ 200 dos valores dentro do arquivo
+	while(fgets(conteudo, 200, file) != NULL) //enquanto o fgets estiver escrevendo na variavel/sring o conteudo at√© 200 dos valores dentro do arquivo
 	{
-		printf("\nEssas s„o as informaÁıes do usu·rio:/n");
+		printf("\nEssas s√£o as informa√ß√µes do usu√°rio:/n");
 		printf("%s", conteudo);
 		printf("\n\n");
 	}
@@ -104,11 +104,11 @@ int deletar()
 {
 	setlocale(LC_ALL,"portuguese"); //definindo a linguagem
 	
-	//inicio das vari·veis
+	//inicio das vari√°veis
 	char cpf[40];
-	//fim das vari·veis
+	//fim das vari√°veis
 	
-	printf("Digite o CPF do usuÔøΩrio a ser deletado: "); //coleta o dado necess·rio para deletar
+	printf("Digite o CPF do usu√Ø¬ø¬Ωrio a ser deletado: "); //coleta o dado necess√°rio para deletar
 	scanf("%s", cpf);	
 	
 	FILE*file;
@@ -117,15 +117,15 @@ int deletar()
 	
 	if(file == NULL)
 	{
-		printf("lamento, o usu·rio n„o foi encontrado no sistema.\n");
+		printf("lamento, o usu√°rio n√£o foi encontrado no sistema.\n");
 		system("pause");
 	}
 	
 	else
 	{
-	fclose(file); // Fecha o arquivo, pois ele j· existente
-    remove(cpf); // Agora vocÍ pode remover o arquivo
-    printf("Usu·rio deletado com sucesso!\n");
+	fclose(file); // Fecha o arquivo, pois ele j√° existente
+    remove(cpf); // Agora voc√™ pode remover o arquivo
+    printf("Usu√°rio deletado com sucesso!\n");
     system("pause");	
 	}
 	
@@ -135,14 +135,14 @@ int deletar()
 
 int main()
 {
-	int opcao=0; //definindo vari·veis
+	int opcao=0; //definindo vari√°veis
 	int laco=1;
 	char senhadigitada[10]="a";
-	int comparacao; //respons·vel pela comparaÁ„o na hora de colocar a senha
+	int comparacao; //respons√°vel pela compara√ß√£o na hora de colocar a senha
 	int tentativas = 0; //contador de tentativas
 	
 	
-	printf("### CartÛrio de alunos da EBAC ###\n\n");
+	printf("### Cart√≥rio de alunos da EBAC ###\n\n");
 	printf("Login de administrador!\n\nDigite a sua senha:");
 	
 	//loop para permitir as 3 tentativas
@@ -161,27 +161,27 @@ int main()
 		for(laco=1; laco=1;)
 		{
 		
-			system("cls"); //responsÔøΩvei por limpar a tela
+			system("cls"); //respons√Ø¬ø¬Ωvei por limpar a tela
 	
 	
 			setlocale(LC_ALL, "portuguese"); //Definindo a linguagem
 	
-			printf("### CartÛrio de alunos da EBAC ###\n\n"); //Inicio do menu
-			printf("Escolha a opÁ„o desejada no menu: \n\n"); 
+			printf("### Cart√≥rio de alunos da EBAC ###\n\n"); //Inicio do menu
+			printf("Escolha a op√ß√£o desejada no menu: \n\n"); 
 			printf("\t1 - Registrar nomes:\n"); 
 			printf("\t2 - Consultar nomes:\n");
 			printf("\t3 - Deletar nomes:\n"); 
 			printf("\t4 - Sair do sistema.\n");
-			printf("opÁ„o:"); //fim do menu
+			printf("op√ß√£o:"); //fim do menu
 	
-			scanf("%d", &opcao); //armazenando a escolha do usu·rio
+			scanf("%d", &opcao); //armazenando a escolha do usu√°rio
 
 			system("cls");
 		
-		switch(opcao) //inicio da seleÁ„o do menu
+		switch(opcao) //inicio da sele√ß√£o do menu
 		{
 			case 1: 
-			registro(); //chamada de funÁıes
+			registro(); //chamada de fun√ß√µes
 			break;
 			
 			case 2:
@@ -199,8 +199,8 @@ int main()
 			
 			
 			default: 
-			printf("Lamento, essa opÁ„o n„o est· disponÌvel :( , por favor retorne ao menu\n");
-			system("pause"); //fim da seleÁ„o
+			printf("Lamento, essa op√ß√£o n√£o est√° dispon√≠vel :( , por favor retorne ao menu\n");
+			system("pause"); //fim da sele√ß√£o
 			
 		  }
 		
@@ -216,7 +216,7 @@ int main()
 	
 }
 
-	//se o usu·rio errar a senha 3 vezes, exibe a mensagem de bloqueio
+	//se o usu√°rio errar a senha 3 vezes, exibe a mensagem de bloqueio
 	printf("limite de tentativas excecido Acesso negado :(\n");
 	
 	return 0;
